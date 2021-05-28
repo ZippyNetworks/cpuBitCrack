@@ -5,10 +5,10 @@ Bitcoin özel anahtarını bulmak için Python ile yazılmış bir araç. Verile
 Özetle;
 
 1. aşamada verilen aralığı yüzdelerine ayırır,
-2. aşamada 1. aşamanın aralıklarını yüzdelere ayırır,
-3. aşamada tüm yüzdelerine ayrılmış sayıların arasında rastgele sayı arar.
+2. aşamada 1. aşamanın tüm aralıklarını yüzdelere ayırır,
+3. aşamada 2. aşamanın tüm aralıkları arasında rastgele sayı arar.
 
-Eşleşme olursa BULUNDU.txt dosyasına yazdırır. Büyük aralıklar için umut yok, eğer Dünya'nın en şanslı kişisi iseniz deneyin :)
+Herhangi bir aşamada eşleşme olursa BULUNDU.txt dosyasına yazdırır. Büyük aralıklar için umut yok, eğer Dünya'nın en şanslı kişisi iseniz deneyin :)
 
 `-a` -- Aranacak adres, ADDRESS
 
