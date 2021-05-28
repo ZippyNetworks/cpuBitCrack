@@ -10,7 +10,7 @@ Acemice hazırladığım bir python aracıdır. Büyük aralıklar için umut yo
 -e = Aralığın Bitişi
 -str = Zıplama
 
-Örnek :
-
 # 64. Puzzle
 python3 cpuBitCrack.py -a 16jY7qLJnxb7CHZyqBP8qca9d51gAjyXQN -s 9223372036854775807 -e 18446744073709551615 -str 1354254
+
+Desteklemek İstersen : bc1q2sf6uq7k75dexddm9k9kw6ega7k75up57juf76
