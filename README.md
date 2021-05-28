@@ -1,6 +1,6 @@
 # cpuBitCrack
 
-Bitcoin özel anahtarını bulmak için Python ile yazılmış bir araç. Verilen aralığı yüzdelerine ayırır ve yüzdelerine ayrılanları da yüzdelerine ayırır. Yani 1. aşama da verilen aralığı yüzdelerine ayırır, 2. aşama da 1. aşamanın aralıklarını yüzdelere ayırır. Ayrıca tüm yüzdelerine ayrılmış sayıların arasında rastgele sayı arar. Eşleşme olursa BULUNDU.txt dosyasına yazdırır.
+Bitcoin özel anahtarını bulmak için Python ile yazılmış bir araç. Verilen aralığı yüzdelerine ayırır ve yüzdelerine ayrılanları da yüzdelerine ayırır. Yani 1. aşamada verilen aralığı yüzdelerine ayırır, 2. aşamada 1. aşamanın aralıklarını yüzdelere ayırır. Ayrıca tüm yüzdelerine ayrılmış sayıların arasında rastgele sayı arar. Eşleşme olursa BULUNDU.txt dosyasına yazdırır.
 
 Acemice hazırladığım bir python aracıdır. Büyük aralıklar için umut yok, eğer Dünya'nın en şanslı kişisi iseniz deneyin :)
 
