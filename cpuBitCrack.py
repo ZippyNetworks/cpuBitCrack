@@ -30,9 +30,7 @@ alt = '\n'
 bir = 1
 print(alt + '================================' + alt + '............ARANIYOR............' + alt + 'Başlangıç : ' + str(x) + alt + 'Bitiş     : ' + str(y) + alt + 'Zıplama   : ' + str(d))
 bulundu = (alt + '\033[92m ------------BULUNDU------------' + alt + '\033[92m *********ADRES BULUNDU*********' + alt + '\033[92m ------------BULUNDU------------')
-class T:
-    def __del__(self):
-        print("deleted")
+
 try:
 	while True:
 		x=x+d
