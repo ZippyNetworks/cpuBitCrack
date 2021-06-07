@@ -6,10 +6,10 @@ import bit
 import re
 import random
 import argparse
-import time
 import sys
 
-t_1 = int(time.time())
+#import time
+#t_1 = int(time.time())
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-a', '--address', help = 'ADDRESS', required = True)
@@ -27,15 +27,15 @@ d=int(args.stride)
 arti = '+'
 eksi = '-'
 alt = '\n'
-bir = 1
-print(alt + '================================' + alt + '............ARANIYOR............' + alt + 'Başlangıç : ' + str(x) + alt + 'Bitiş     : ' + str(y) + alt + 'Zıplama   : ' + str(d))
+sayac_1 = 0
 bulundu = (alt + '\033[92m ------------BULUNDU------------' + alt + '\033[92m *********ADRES BULUNDU*********' + alt + '\033[92m ------------BULUNDU------------')
 
 try:
 	while True:
+		sayac_1 = sayac_1 + 1
 		x=x+d
 		y=y-d
-		print("", end=f"\r{x}><{y}")
+		print(f'___________{sayac_1}. AŞAMA___________' + alt + 'Başlangıç : ' + str(x) + alt + 'Bitiş     : ' + str(y))
 		# ------------ 1. AŞAMA BAŞLANGIÇ ------------
 		yuzde = int(y - x)//2
 		for dongu in range(100):
@@ -71,35 +71,24 @@ try:
 			a_2 = 'p_y_' + x_i + '.address'
 			a_3 = 'pr_x_' + x_i + '.address'
 			a_4 = 'pr_y_' + x_i + '.address'
-			addr = str(eval(a_1) + eval(a_2) + eval(a_3) + eval(a_4))
+			addr = str(eval(a_1)[:10] + eval(a_2)[:10] + eval(a_3)[:10] + eval(a_4)[:10])
 			if re.search (A,addr):
 				f=open('BULUNDU.txt', 'a')
-				for b in range(99):
-					x_i = str(b)
-					b_1 = "f.write('p_x_: <--> ' + " + "p_x_" + x_i + ".to_wif() + ' <--> ' + " + "p_x_" + x_i + ".address + alt)"
-					b_2 = "f.write('p_y_: <--> ' + " + "p_y_" + x_i + ".to_wif() + ' <--> ' + " + "p_y_" + x_i + ".address + alt)"
-					b_3 = "f.write('pr_x_: <--> ' + " + "pr_x_" + x_i + ".to_wif() + ' <--> ' + " + "pr_x_" + x_i + ".address + alt)"
-					b_4 = "f.write('pr_y_: <--> ' + " + "pr_y_" + x_i + ".to_wif() + ' <--> ' + " + "pr_y_" + x_i + ".address + alt)"
-					exec(b_1)
-					exec(b_2)
-					exec(b_3)
-					exec(b_4)
+				b_1 = "f.write('p_x_: <--> ' + " + "p_x_" + x_i + ".to_wif() + ' <--> ' + " + "p_x_" + x_i + ".address + alt)"
+				b_2 = "f.write('p_y_: <--> ' + " + "p_y_" + x_i + ".to_wif() + ' <--> ' + " + "p_y_" + x_i + ".address + alt)"
+				b_3 = "f.write('pr_x_: <--> ' + " + "pr_x_" + x_i + ".to_wif() + ' <--> ' + " + "pr_x_" + x_i + ".address + alt)"
+				b_4 = "f.write('pr_y_: <--> ' + " + "pr_y_" + x_i + ".to_wif() + ' <--> ' + " + "pr_y_" + x_i + ".address + alt)"
+				exec(b_1)
+				exec(b_2)
+				exec(b_3)
+				exec(b_4)
 				print(bulundu)
 				f.close()
-				sys.exit()
-			px_X = 'del [' + 'p_x_' + x_i + ']'
-			py_X = 'del [' + 'p_y_' + x_i + ']'
-			px_Y = 'del [' + 'pr_x_' + x_i + ']'
-			py_Y = 'del [' + 'pr_y_' + x_i + ']'
-			exec(px_X)
-			exec(py_X)
-			exec(px_Y)
-			exec(py_Y)
-			addr = 'del [addr]'
-			exec(addr)
+				#sys.exit()
 		# ------------ 1. AŞAMA BİTİŞ ------------
 		# ------------ 2. AŞAMA BAŞLANGIÇ ------------
 		yuzde = int(x_1 - x_0)//2
+		fi = open('bak.txt', 'w')
 		for dongu in range(100):
 			x_i = str(dongu)
 			d_x = 'x_' + x_i
@@ -123,6 +112,8 @@ try:
 				exec(y_Xd)
 				exec(x_Yd)
 				exec(y_Yd)
+				asama = eval(x_X1 + x_ii)
+				fi.write(str(asama) + alt)
 				px_X = x_Xp + x_ii + '=bit.Key.from_int(' + x_X1 + x_ii + ')'
 				py_X = y_Xp + x_ii + '=bit.Key.from_int(' + y_X1 + x_ii + ')'
 				px_Y = x_Yp + x_ii + '=bit.Key.from_int(' + x_Y1 + x_ii + ')'
@@ -135,33 +126,20 @@ try:
 				a_2 = y_Xp + x_ii + '.address'
 				a_3 = x_Yp + x_ii + '.address'
 				a_4 = y_Yp + x_ii + '.address'
-				addr_2 = str(eval(a_1) + eval(a_2) + eval(a_3) + eval(a_4))
+				addr_2 = str(eval(a_1)[:10] + eval(a_2)[:10] + eval(a_3)[:10] + eval(a_4)[:10])
 				if re.search (A,addr_2):
 					f=open('BULUNDU.txt', 'a')
-					for b in range(1):
-						b_1 = "f.write('b_1: <--> ' + " + x_Xp + x_ii + ".to_wif() + ' <--> ' + " + x_Xp + x_ii + ".address + alt)"
-						b_2 = "f.write('b_2: <--> ' + " + y_Xp + x_ii + ".to_wif() + ' <--> ' + " + y_Xp + x_ii + ".address + alt)"
-						b_3 = "f.write('b_3: <--> ' + " + x_Yp + x_ii + ".to_wif() + ' <--> ' + " + x_Yp + x_ii + ".address + alt)"
-						b_4 = "f.write('b_4: <--> ' + " + y_Yp + x_ii + ".to_wif() + ' <--> ' + " + y_Yp + x_ii + ".address + alt)"
-						exec(b_1)
-						exec(b_2)
-						exec(b_3)
-						exec(b_4)
+					b_1 = "f.write('b_1: <--> ' + " + x_Xp + x_ii + ".to_wif() + ' <--> ' + " + x_Xp + x_ii + ".address + alt)"
+					b_2 = "f.write('b_2: <--> ' + " + y_Xp + x_ii + ".to_wif() + ' <--> ' + " + y_Xp + x_ii + ".address + alt)"
+					b_3 = "f.write('b_3: <--> ' + " + x_Yp + x_ii + ".to_wif() + ' <--> ' + " + x_Yp + x_ii + ".address + alt)"
+					b_4 = "f.write('b_4: <--> ' + " + y_Yp + x_ii + ".to_wif() + ' <--> ' + " + y_Yp + x_ii + ".address + alt)"
+					exec(b_1)
+					exec(b_2)
+					exec(b_3)
+					exec(b_4)
 					print(bulundu)
 					f.close()
-					sys.exit()
-				px_X = 'del [' + x_Xp + x_ii + ']'
-				py_X = 'del [' + y_Xp + x_ii + ']'
-				px_Y = 'del [' + x_Yp + x_ii + ']'
-				py_Y = 'del [' + y_Yp + x_ii + ']'
-				exec(px_X)
-				exec(py_X)
-				exec(px_Y)
-				exec(py_Y)
-				addr_2 = 'del [addr_2]'
-				exec(addr_2)
-
-		# AŞAMA 3:1 RANDOM
+					#sys.exit()
 		for dongu_1 in range(100):
 			x_i = str(dongu_1)
 			x_X1d = 'x_Xr_' + x_i + '_'
@@ -200,25 +178,24 @@ try:
 				a_2 = y_Xp2 + x_ii + '.address'
 				a_3 = x_Yp2 + x_ii + '.address'
 				a_4 = y_Yp2 + x_ii + '.address'
-				addr_r3 = str(eval(a_1) + eval(a_2) + eval(a_3) + eval(a_4))
+				addr_r3 = str(eval(a_1)[:10] + eval(a_2)[:10] + eval(a_3)[:10] + eval(a_4)[:10])
 				if re.search (A,addr_r3):
 					f=open('BULUNDU.txt', 'a')
-					for b in range(1):
-						b_1 = "f.write('r1: <--> ' + " + x_Xp2 + x_ii + ".to_wif() + ' <--> ' + " + x_Xp2 + x_ii + ".address + alt)"
-						b_2 = "f.write('r2: <--> ' + " + y_Xp2 + x_ii + ".to_wif() + ' <--> ' + " + y_Xp2 + x_ii + ".address + alt)"
-						b_3 = "f.write('r3: <--> ' + " + x_Yp2 + x_ii + ".to_wif() + ' <--> ' + " + x_Yp2 + x_ii + ".address + alt)"
-						b_4 = "f.write('r4: <--> ' + " + y_Yp2 + x_ii + ".to_wif() + ' <--> ' + " + y_Yp2 + x_ii + ".address + alt)"
-						exec(b_1)
-						exec(b_2)
-						exec(b_3)
-						exec(b_4)
+					b_1 = "f.write('r1: <--> ' + " + x_Xp2 + x_ii + ".to_wif() + ' <--> ' + " + x_Xp2 + x_ii + ".address + alt)"
+					b_2 = "f.write('r2: <--> ' + " + y_Xp2 + x_ii + ".to_wif() + ' <--> ' + " + y_Xp2 + x_ii + ".address + alt)"
+					b_3 = "f.write('r3: <--> ' + " + x_Yp2 + x_ii + ".to_wif() + ' <--> ' + " + x_Yp2 + x_ii + ".address + alt)"
+					b_4 = "f.write('r4: <--> ' + " + y_Yp2 + x_ii + ".to_wif() + ' <--> ' + " + y_Yp2 + x_ii + ".address + alt)"
+					exec(b_1)
+					exec(b_2)
+					exec(b_3)
+					exec(b_4)
 					print(bulundu)
 					f.close()
-					sys.exit()
+					#sys.exit()
 except ValueError:
-	t_2 = int(time.time())
-	elapsed = int(t_2 - t_1)
-	formatNumber = lambda n: n if n%1 else int(n)
-	formatNumber(elapsed)
-	print(alt + 'Geçen Süre: {} s.'.format(elapsed))
+	#t_2 = int(time.time())
+	#elapsed = int(t_2 - t_1)
+	#formatNumber = lambda n: n if n%1 else int(n)
+	#formatNumber(elapsed)
+	#print(alt + 'Geçen Süre: {} s.'.format(elapsed))
 	print('***********BULUNAMADI***********')
