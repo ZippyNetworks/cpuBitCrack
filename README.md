@@ -18,7 +18,7 @@ Herhangi bir aşamada eşleşme olursa BULUNDU.txt dosyasına yazdırır. Büyü
 
 `-str` -- Adım, STRIDE
 
-#Puzzle 64
+#Puzzle 64 : 
 `python3 cpuBitCrack.py -a 16jY7qLJ -s 9223372036854775807 -e 18446744073709551615 -str 1`
 
 Desteklemek İstersen : `bc1q2sf6uq7k75dexddm9k9kw6ega7k75up57juf76`
